@@ -1,8 +1,5 @@
 import path from 'path';
-import util from 'util';
-
-import glob from 'glob';
-
+import {glob} from 'glob';
 import type {LoaderContext, StyleResourcesLoaderNormalizedOptions} from '../types';
 
 import {isStyleFile} from './type-guards';
@@ -19,30 +16,21 @@ const getRootContext = (ctx: LoaderContext) => {
     return ctx.rootContext;
 };
 
-const flatten = <T>(items: T[][]) => {
-    const emptyItems: T[] = [];
-
-    return emptyItems.concat(...items);
-};
-
 export const matchFiles = async (ctx: LoaderContext, options: StyleResourcesLoaderNormalizedOptions) => {
-    const {patterns, globOptions} = options;
+    const {patterns, globOptions = {}} = options;
 
-    const files = await Promise.all(
-        patterns.map(async pattern => {
-            const rootContext = getRootContext(ctx);
-            const absolutePattern = path.isAbsolute(pattern) ? pattern : path.resolve(rootContext, pattern);
-            const partialFiles = await util.promisify(glob)(absolutePattern, globOptions);
+    const formatPattern = patterns.map(pattern => {
+        const rootContext = getRootContext(ctx);
 
-            return partialFiles.filter(isStyleFile);
-        }),
-    );
+        return path.isAbsolute(pattern) ? pattern : path.resolve(rootContext, pattern);
+    });
+    const files = await glob(formatPattern, {...globOptions, withFileTypes: false});
 
     /**
      * Glob always returns Unix-style file paths which would have cache invalidation problems on Windows.
      * Use `path.resolve()` to convert Unix-style file paths to system-compatible ones.
      *
-     * @see {@link https://github.com/yenshih/style-resources-loader/issues/17}
+     * @see {@link https://github.com/yenshih/style-resources-loader/issues/17\}
      */
-    return [...new Set(flatten(files))].map(file => path.resolve(file));
+    return files.filter(isStyleFile).map(file => path.resolve(file));
 };

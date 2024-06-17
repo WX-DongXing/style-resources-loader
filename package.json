@@ -1,11 +1,11 @@
 {
   "name": "style-resources-loader",
-  "version": "1.5.0",
+  "version": "1.0.0",
   "description": "CSS processor resources loader for webpack",
   "author": "Yan Shi <yenshih95@gmail.com> (https://github.com/yenshih)",
   "license": "MIT",
   "engines": {
-    "node": ">=8.9"
+    "node": ">=16 || 14 >=14.18"
   },
   "main": "lib/index.js",
   "files": [
@@ -38,12 +38,13 @@
     "variable",
     "mixin"
   ],
-  "repository": "https://github.com/yenshih/style-resources-loader.git",
-  "homepage": "https://github.com/yenshih/style-resources-loader",
-  "bugs": "https://github.com/yenshih/style-resources-loader/issues",
+  "repository": "https://github.com/WX-DongXing/style-resources-loader.git",
+  "homepage": "https://github.com/WX-DongXing/style-resources-loader",
+  "bugs": "https://github.com/WX-DongXing/style-resources-loader/issues",
   "dependencies": {
-    "glob": "^7.2.0",
+    "glob": "^10.4.1",
     "loader-utils": "^2.0.0",
+    "node-cache": "^5.1.2",
     "schema-utils": "^2.7.0",
     "tslib": "^2.3.1"
   },

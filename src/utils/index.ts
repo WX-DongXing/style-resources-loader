@@ -8,3 +8,4 @@ export * from './normalize-options';
 export * from './resolve-import-url';
 export * from './type-guards';
 export * from './validate-options';
+export * from './node-cache';

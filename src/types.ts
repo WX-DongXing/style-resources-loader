@@ -1,5 +1,5 @@
 import type {loader} from 'webpack';
-import type glob from 'glob';
+import type {GlobOptions} from 'glob';
 
 export type Loader = loader.Loader;
 
@@ -29,7 +29,7 @@ export type StyleResourcesNormalizedInjector = StyleResourcesFunctionalInjector;
 export interface StyleResourcesLoaderOptions {
     patterns: string | string[];
     injector?: StyleResourcesInjector;
-    globOptions?: glob.IOptions;
+    globOptions?: GlobOptions;
     resolveUrl?: boolean;
 }
 

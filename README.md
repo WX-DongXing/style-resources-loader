@@ -18,10 +18,13 @@
 </div>
 
 
+> [!TIP]
+> Cache matched files to avoid reading matching files every time
+
 <h2 align="center">Install</h2>
 
 ```bash
-npm i style-resources-loader -D
+npm i @evoral/style-resources-loader -D
 ```
 
 <h2 align="center">Usage</h2>

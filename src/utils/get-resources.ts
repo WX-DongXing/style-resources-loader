@@ -1,5 +1,4 @@
-import fs from 'fs';
-import util from 'util';
+import {getFileSource} from './node-cache';
 
 import type {LoaderContext, StyleResource, StyleResourcesLoaderNormalizedOptions} from '../types';
 
@@ -15,7 +14,7 @@ export const getResources = async (ctx: LoaderContext, options: StyleResourcesLo
 
     const resources = await Promise.all(
         files.map(async file => {
-            const content = await util.promisify(fs.readFile)(file, 'utf8');
+            const content = await getFileSource(file);
             const resource: StyleResource = {file, content};
 
             return resolveUrl ? resolveImportUrl(ctx, resource) : resource;
