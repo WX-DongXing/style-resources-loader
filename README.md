@@ -1,8 +1,6 @@
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
 [![downloads][downloads]][downloads-url]
-[![build][build]][build-url]
-[![coverage][coverage]][coverage-url]
 [![996.icu][996.icu]][996.icu-url]
 
 <div align="center">
@@ -128,7 +126,7 @@ module.exports = {
 |**[`globOptions`](#globoptions)**|`GlobOptions`|`{}`|An options that can be passed to `glob(...)`|
 |**[`resolveUrl`](#resolveurl)**|`boolean`|`true`|Enable/Disable `@import` url to be resolved|
 
-See [the type definition file](https://github.com/yenshih/style-resources-loader/blob/master/src/types.ts) for more details.
+See [the type definition file](https://github.com/WX-DongXing/style-resources-loader/blob/master/src/types.ts) for more details.
 
 ### `patterns`
 
@@ -203,15 +201,11 @@ You could disable this feature by setting `resolveUrl` to `false`.
 
 [MIT](http://www.opensource.org/licenses/mit-license.php)
 
-[npm]: https://img.shields.io/npm/v/style-resources-loader.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/style-resources-loader
-[node]: https://img.shields.io/node/v/style-resources-loader.svg
+[npm]: https://img.shields.io/npm/v/%40evoral%2Fstyle-resources-loader?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@evoral/style-resources-loader
+[node]: https://img.shields.io/node/v/%40evoral%2Fstyle-resources-loader
 [node-url]: https://nodejs.org
-[downloads]: https://img.shields.io/npm/dm/style-resources-loader.svg?style=flat-square
-[downloads-url]: https://www.npmjs.com/package/style-resources-loader
-[build]: https://img.shields.io/travis/yenshih/style-resources-loader/master.svg?style=flat-square
-[build-url]: https://travis-ci.org/yenshih/style-resources-loader
-[coverage]: https://img.shields.io/coveralls/yenshih/style-resources-loader/master.svg?style=flat
-[coverage-url]: https://coveralls.io/github/yenshih/style-resources-loader?branch=master
+[downloads]: https://img.shields.io/npm/dm/%40evoral%2Fstyle-resources-loader?style=flat-square
+[downloads-url]: https://www.npmjs.com/package/@evoral/style-resources-loader
 [996.icu]: https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg?style=flat-square
 [996.icu-url]: https://996.icu/#/en_US
